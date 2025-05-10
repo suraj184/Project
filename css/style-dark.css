@@ -45,85 +45,276 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.container{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "montserrat", sans-serif;
 }
-.container .preloader{
-  animation: rotate 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
-}
-@keyframes rotate {
-  50%{
-    transform: rotate(360deg);
-  }
-  100%{
-    transform: rotate(720deg);
-  }
-}
-.preloader span{
-  position: absolute;
-  display: block;
-  height: 64px;
-  width: 64px;
-  background: #Fca6AA;
-  border: 1px solid #Fca6AA;
-  border-radius: 100%;
-}
-.preloader span:nth-child(1){
-  transform: translate(-28px, -28px);
-  animation: shape_1 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
-}
-@keyframes shape_1 {
-  60%{
-    transform: scale(0.4);
-  }
-}
-.preloader span:nth-child(2){
-  transform: translate(28px, -28px);
-  animation: shape_2 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
-}
-@keyframes shape_2 {
-  40%{
-    transform: scale(0.4);
-  }
-}
-.preloader span:nth-child(3){
+.flex-container {
+  width: 100%;
+  height: 100%;
   position: relative;
-  border-radius: 0px;
-  transform: scale(0.98) rotate(-45deg);
-  animation: shape_3 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
-}
-@keyframes shape_3 {
-  50%{
-    border-radius: 100%;
-    transform: scale(0.5) rotate(-45deg);
-  }
-  100%{
-    transform: scale(0.98) rotate(-45deg);
-  }
-}
-.shadow{
-  position: relative;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: block;
-  height: 16px;
-  width: 64px;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-  border: 1px solid #d9d9d9;
-  animation: shadow 2.3s cubic-bezier(0.75, 0, 0.5, 1) infinite;
-}
-@keyframes shadow {
-  50%{
-    transform: translateX(-50%) scale(0.5);
-    border-color: #f2f2f2;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
+.unit {
+  text-align: center;
+}
+.unit p {
+  margin-top: 100px;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+}
+.heartL {
+  position: relative;
+  font-size: 0;
+  width: 138px;
+}
+[class*="heart-piece-"] {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+/* MODIFIED: Animation durations changed from 3.2s to 1.6s */
+.heart-piece-4 {
+  -webkit-animation: piece-4 1.6s infinite;
+  animation: piece-4 1.6s infinite;
+}
+.heart-piece-3,
+.heart-piece-5 {
+  -webkit-animation: piece-3 1.6s infinite;
+  animation: piece-3 1.6s infinite;
+}
+.heart-piece-2,
+.heart-piece-6 {
+  -webkit-animation: piece-2 1.6s infinite;
+  animation: piece-2 1.6s infinite;
+}
+.heart-piece-1,
+.heart-piece-7 {
+  -webkit-animation: piece-1 1.6s infinite;
+  animation: piece-1 1.6s infinite;
+}
+.heart-piece-0,
+.heart-piece-8 {
+  -webkit-animation: piece-0 1.6s infinite;
+  animation: piece-0 1.6s infinite;
+}
+
+/* MODIFIED: Animation delays adjusted proportionally (halved) */
+.heart-piece-0 {
+  left: 0px;
+  -webkit-animation-delay: 0s; /* Was 0s */
+  animation-delay: 0s; /* Was 0s */
+  background-color: #cc333f;
+  /*background-color: #ec2d73;*/
+}
+.heart-piece-1 {
+  left: 16px;
+  -webkit-animation-delay: 0.075s; /* Was 0.15s */
+  animation-delay: 0.075s; /* Was 0.15s */
+  /*background-color: #eb5324;*/
+  background-color: #cc333f;
+}
+.heart-piece-2 {
+  left: 32px;
+  -webkit-animation-delay: 0.15s; /* Was 0.3s */
+  animation-delay: 0.15s; /* Was 0.3s */
+  /*background-color: #fdc800;*/
+  background-color: #cc333f;
+}
+.heart-piece-3 {
+  left: 48px;
+  -webkit-animation-delay: 0.225s; /* Was 0.45s */
+  animation-delay: 0.225s; /* Was 0.45s */
+  /*background-color: #47b264;*/
+  background-color: #cc333f;
+}
+.heart-piece-4 {
+  left: 64px;
+  -webkit-animation-delay: 0.3s; /* Was 0.6s */
+  animation-delay: 0.3s; /* Was 0.6s */
+  /*background-color: #1470bd;*/
+  background-color: #cc333f;
+}
+.heart-piece-5 {
+  left: 80px;
+  -webkit-animation-delay: 0.375s; /* Was 0.75s */
+  animation-delay: 0.375s; /* Was 0.75s */
+  /*background-color: #76469a;*/
+  background-color: #cc333f;
+}
+.heart-piece-6 {
+  left: 96px;
+  -webkit-animation-delay: 0.45s; /* Was 0.9s */
+  animation-delay: 0.45s; /* Was 0.9s */
+  /*background-color: #ec2d73;*/
+  background-color: #cc333f;
+}
+.heart-piece-7 {
+  left: 112px;
+  -webkit-animation-delay: 0.525s; /* Was 1.05s */
+  animation-delay: 0.525s; /* Was 1.05s */
+  /*background-color: #eb5324;*/
+  background-color: #cc333f;
+}
+.heart-piece-8 {
+  left: 128px;
+  -webkit-animation-delay: 0.6s; /* Was 1.2s */
+  animation-delay: 0.6s; /* Was 1.2s */
+  /*background-color: #fdc800;*/
+  background-color: #cc333f;
+}
+
+/* Keyframes remain unchanged as their percentages scale with the new duration */
+@-webkit-keyframes piece-4 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 94px;
+    top: -23px;
+  }
+}
+@keyframes piece-4 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 94px;
+    top: -23px;
+  }
+}
+@-webkit-keyframes piece-3 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 90px;
+    top: -31px;
+  }
+}
+@keyframes piece-3 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 90px;
+    top: -31px;
+  }
+}
+@-webkit-keyframes piece-2 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 80px;
+    top: -37px;
+  }
+}
+@keyframes piece-2 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 80px;
+    top: -37px;
+  }
+}
+@-webkit-keyframes piece-1 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 60px;
+    top: -31px;
+  }
+}
+@keyframes piece-1 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 60px;
+    top: -31px;
+  }
+}
+@-webkit-keyframes piece-0 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 30px;
+    top: -15px;
+  }
+}
+@keyframes piece-0 {
+  0%,
+  10%,
+  90%,
+  100% {
+    height: 10px;
+    top: -5px;
+  }
+  45%,
+  55% {
+    height: 30px;
+    top: -15px;
+  }
+}
 
 .heart1 {
   height: 400px;
